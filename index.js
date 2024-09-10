@@ -2,11 +2,9 @@ const express = require('express')
 const app = express();
 require('dotenv').config(); //configure env
 const PORT=process.env.PORT;
-const posts = require('./routes/posts')
+const grades = require('./routes/grades')
 
 app.use(express.json())
-
-
 
 
 // app.get('/',(req,res)=>{
@@ -15,7 +13,7 @@ app.use(express.json())
 
 
 
-app.use('/api/posts',posts);
+app.use('/api',grades);
 
 app.listen(PORT,()=>{
     console.log(`server is running on ${PORT}`);
